@@ -1,0 +1,46 @@
+#zuul:
+#  routes:
+#    product:
+#      path: /product/**
+##      url: http://localhost:8761/eureka
+##      stripPrefix: true
+#    cartAndOrder:
+#        path: /cartOrder/**
+#        service-id: cartAndOrderService
+##        url: http://10.177.69.105:8081
+##        stripPrefix: true
+#    merchant:
+#        path: /merchant/**
+#        service-id: merchantservice
+##        url: http://10.177.69.105:8082
+##        stripPrefix: true
+#    solr:
+#        path: /solrsearch/**
+#        service-id: solrsearchservice
+##        url: http://10.177.68.21:7007
+##        stripPrefix: true
+#    customer:
+#        path: /customer/**
+#        service-id: loginservice
+##        url: http://10.177.69.1:8081
+##        stripPrefix: true
+#    login:
+#        path: /login/**
+#        service-id: loginservice
+##        url: http://10.177.69.1:8081
+##        stripPrefix: true
+#    loginHistory:
+#        path: /loginHistory/**
+#        service-id: loginservice
+##        url: http://10.177.69.1:8081
+##        stripPrefix: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 60000
+
